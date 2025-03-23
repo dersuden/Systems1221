@@ -7,24 +7,23 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
-public class AddUser {
-    public void addUser(int id, String name, String email, int age, int weight, int height, String goal) {
+public class AddFood {
+    public void addFood(int id, String name, int calories, double proteins, double fats, double carbohydrates) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";
-        String sql = "INSERT INTO users VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO food VALUES (?,?,?,?,?,?)";
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.setString(2, name);
-            preparedStatement.setString(3, email);
-            preparedStatement.setInt(4, age);
-            preparedStatement.setInt(5, weight);
-            preparedStatement.setInt(6, height);
-            preparedStatement.setString(7, goal);
+            preparedStatement.setInt(3, calories);
+            preparedStatement.setDouble(4, proteins);
+            preparedStatement.setDouble(5, fats);
+            preparedStatement.setDouble(6, carbohydrates);
             preparedStatement.executeUpdate();
-            System.out.println("Пользователь добавлен!");
+            System.out.println("Блюдо добавлено!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

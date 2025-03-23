@@ -8,8 +8,7 @@ public class Systems1221Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Systems1221Application.class, args);
-        CaloriesInfo caloriesInfo = new CaloriesInfo();
-
-
+        AddFood food = new AddFood();
+        AddUser user = new AddUser();
     }
 }
