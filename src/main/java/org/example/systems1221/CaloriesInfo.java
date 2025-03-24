@@ -25,13 +25,13 @@ public class CaloriesInfo {
                 double cut = basicalMetabolic - 200;
                 if (userGoal.equals("Поддержание"))
 
-                    System.out.println("Количесвто калорий для поддержания веса: " + basicalMetabolic);
+                    System.out.println("Количество калорий для поддержания веса: " + basicalMetabolic);
                 if (userGoal.equals("Набор массы"))
 
-                    System.out.println("Количесвто калорий для набора веса: " + bulk);
+                    System.out.println("Количество калорий для набора веса: " + bulk);
                 if (userGoal.equals("Похудение"))
 
-                    System.out.println("Количесвто калорий для похудения: " + cut);
+                    System.out.println("Количество калорий для похудения: " + cut);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
