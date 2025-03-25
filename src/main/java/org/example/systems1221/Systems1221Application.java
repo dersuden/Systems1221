@@ -10,7 +10,7 @@ public class Systems1221Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Systems1221Application.class, args);
-        Food food = new Food();
-        food.caloriesOfTheDay(Date.valueOf("2025-03-24"));
+        CaloriesInfo caloriesInfo = new CaloriesInfo();
+        caloriesInfo.caloriesOfTheDay(Date.valueOf("2025-03-24"), 4);
     }
 }
