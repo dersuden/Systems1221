@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 
 public class User {
-    public void addUser(int id, String name, String email, int age, int weight, int height, String goal) {
+    public final void addUser(int id, String name, String email, int age, int weight, int height, String goal) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";

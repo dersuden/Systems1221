@@ -5,7 +5,7 @@ import java.sql.*;
 
 
 public class Food {
-    public void addFoodIntoList(int id, String name, int calories, double proteins, double fats, double carbohydrates) {
+    public final void addFoodIntoList(int id, String name, int calories, double proteins, double fats, double carbohydrates) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";
@@ -26,7 +26,7 @@ public class Food {
         }
     }
 
-    public void listOfDishes(int id) {
+    public final void listOfDishes(int id) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";
@@ -53,7 +53,7 @@ public class Food {
         }
     }
 
-    public void addMeal(int id, Date date, String day, String meal) {
+    public final void addMeal(int id, Date date, String day, String meal) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";

@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class CaloriesInfo {
 
-    public void caloriesInfo(int id) {
+    public final void caloriesInfo(int id) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";
@@ -38,7 +38,7 @@ public class CaloriesInfo {
         }
     }
 
-    public void caloriesOfTheDay(Date date, int hundredGrams) {
+    public final void caloriesOfTheDay(Date date, int grams) {
         String url = "jdbc:postgresql://localhost:5432/Weight_loss";
         String user = "Arthur";
         String password = "123";
@@ -46,7 +46,7 @@ public class CaloriesInfo {
                 + "d.date, "
                 + "d.day, "
                 + "COUNT(d.meal) AS meals_count, "
-                + "SUM(f.calories_on_portion) AS total_calories, "
+                + "SUM(f.calories) AS total_calories, "
                 + "SUM(f.proteins) AS total_proteins, "
                 + "SUM(f.fats) AS total_fats, "
                 + "SUM(f.carbohydrates) AS total_carbohydrates , "
@@ -72,10 +72,10 @@ public class CaloriesInfo {
 
                         System.out.println("Съеденное за " + resultSet.getDate("date") + ":");
                         System.out.println("Блюда: " + meals);
-                        System.out.println("Общее количество калорий: " + calories * hundredGrams + "г.");
-                        System.out.println("Белки: " + proteins * hundredGrams + "г.");
-                        System.out.println("Жиры: " + fats * hundredGrams + "г.");
-                        System.out.println("Углеводы: " + carbohydrates * hundredGrams + "г.");
+                        System.out.println("Общее количество калорий: " + calories * grams + "г.");
+                        System.out.println("Белки: " + proteins * grams + "г.");
+                        System.out.println("Жиры: " + fats * grams + "г.");
+                        System.out.println("Углеводы: " + carbohydrates * grams + "г.");
                     } else {
                         System.out.println("Нет данных за указанную дату");
                     }
